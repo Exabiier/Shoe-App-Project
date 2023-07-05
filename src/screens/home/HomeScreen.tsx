@@ -1,11 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import products from '../../data/products';
+
 
 const HomeScreen = () => {
   return (
     <View className="flex-1 items-center justify-center bg-white">
-    <Text>Open up App.tsx to start working on your app!</Text>
-    <StatusBar style="auto" />
+      <FlatList<Product>
+      numColumns={2}
+      data={products}
+      renderItem={({item}) => (
+          <View className='w-[50%] p-1'>
+          <Image source={{uri: item.image}} className='w-[100%]' style={styles.image}/>
+          </View>
+      )}
+      />
   </View>
   )
 }
@@ -19,4 +27,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    image: {
+      aspectRatio: 1,
+    }
   });
