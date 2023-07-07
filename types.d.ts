@@ -1,6 +1,7 @@
 // React navigation types:
 type RootStackParamList = {
     Home: undefined,
+    ProductScreen: undefined,
 }
 
 //Data types and Interfaces:
