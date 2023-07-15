@@ -2,6 +2,7 @@
 type RootStackParamList = {
     Home: undefined,
     ProductScreen: undefined,
+    ShoppingCartScreen: undefined,
 }
 
 //Data types and Interfaces:
@@ -14,5 +15,17 @@ interface Product {
     sizes: number[];
     description: string;
 
+}
+
+interface CartItem {
+    product: {
+        id: string,
+        image:
+          string,
+        name: string,
+        price: number,
+      },
+      size: number,
+      quantity: number,
 }
 
